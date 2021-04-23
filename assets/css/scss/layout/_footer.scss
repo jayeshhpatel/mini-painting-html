@@ -1,0 +1,84 @@
+footer {
+    .footer-inner-block {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(space-between);
+        padding: 100px 0 40px;
+        .footer-logo {
+            @include flexbox();
+            @include align-items(center);
+            a {
+                @include inline-flex;
+            }
+        }
+        .copyright-text {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 0 60px;
+        }
+        .footer-menu-list {
+            @include flexbox();
+            @include align-items(center);
+
+            li {
+                margin-right: 60px;
+                &:last-child {
+                    margin: 0;
+                }
+                a {
+                    font-size: 17px;
+                    font-weight: 700;
+                    color: #333;
+                    display: inline-block;
+                    line-height: 1;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    @media (max-width: 991px) {
+        .footer-inner-block {
+            padding-top: 70px;
+            .copyright-text {
+                margin: 0 0 0 20px;
+            }
+            .footer-logo {
+                a {
+                    img {
+                        height: 45px;
+                    }
+                }
+            }
+            .footer-menu-list {
+                li {
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        .footer-inner-block {
+            padding-top: 40px;
+            display: block;
+            .footer-logo {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    @media (max-width: 575px) {
+        .footer-inner-block {
+            .footer-logo {
+                display: block;
+            }
+            .copyright-text {
+                margin: 15px 0 0 0;
+            }
+            .footer-menu-list {
+                display: block;
+                li {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
