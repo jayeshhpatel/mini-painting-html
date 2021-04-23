@@ -86,11 +86,10 @@
             padding: 15px 0;
             .header-logo-menu {
                 .menu-list {
-                    min-height: calc(100vh - 83px);
+                    min-height: calc(100vh - 75px);
                     overflow-y: auto;
                     width: 300px;
                     display: block;
-                    @include transition(0.4s, ease-in-out);
                     @include transform(translatex(-100%));
                     background-color: $white;
                     position: fixed;
@@ -100,8 +99,9 @@
                     z-index: 99;
                     padding: 10px 0;
                     border: 1px solid #eeeeee;
-                    margin-top: 83px;
+                    margin-top: 75px;
                     &.is-visible {
+                        @include transition(0.4s, ease-in-out);
                         @include transform(translatex(0));
                     }
                     li {
@@ -113,8 +113,21 @@
         }
     }
     @media (max-width: 575px) {
-        .inner-block .header-logo-menu .logo a img {
-            height: 35px;
+        .inner-block {
+            padding: 15px 0;
+            .header-logo-menu {
+                .logo {
+                    a {
+                        img {
+                            height: 35px;
+                        }
+                    }
+                }
+                .menu-list {
+                    min-height: calc(100vh - 70px);
+                    margin-top: 70px;
+                }
+            }
         }
     }
 }
@@ -124,13 +137,13 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    @include transition(0.4s, ease-in-out);
     @include opacity(0);
     background: $black;
     visibility: hidden;
     z-index: 1;
     &.is-visible {
         @include opacity(0.4);
+        @include transition(0.4s, ease-in-out);
         visibility: visible;
     }
 }
