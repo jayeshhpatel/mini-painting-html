@@ -14,7 +14,7 @@
     cursor: pointer;
     @include transition(0.4s, ease-in-out);
     &:hover {
-        background-color: $darkblack;
+        background-color: $green;
         color: $white;
     }
     @media (max-width: 991px) {

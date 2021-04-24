@@ -1,6 +1,6 @@
 .main-header {
+    padding: 30px 0;
     .inner-block {
-        padding: 30px 0;
         @include flexbox();
         @include align-items(center);
         @include justify-content(space-between);
@@ -26,6 +26,10 @@
                         @include inline-flex;
                         line-height: 1;
                         text-transform: uppercase;
+                        @include transition(0.4s, ease-in-out);
+                        &:hover {
+                            color: $green;
+                        }
                     }
                 }
             }
@@ -36,8 +40,8 @@
         }
     }
     @media (max-width: 991px) {
+        padding: 20px 0;
         .inner-block {
-            padding: 20px 0;
             .header-logo-menu {
                 .logo {
                     a {
@@ -58,6 +62,7 @@
         position: relative;
         z-index: 2;
         background-color: $white;
+        padding: 15px 0;
         .menu-icon {
             margin-left: 10px;
             &.is-visible {
@@ -83,7 +88,6 @@
             }
         }
         .inner-block {
-            padding: 15px 0;
             .header-logo-menu {
                 .menu-list {
                     min-height: calc(100vh - 75px);
@@ -114,7 +118,6 @@
     }
     @media (max-width: 575px) {
         .inner-block {
-            padding: 15px 0;
             .header-logo-menu {
                 .logo {
                     a {
