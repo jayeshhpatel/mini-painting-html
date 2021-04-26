@@ -32,8 +32,8 @@ footer {
                     display: inline-block;
                     line-height: 1;
                     text-transform: uppercase;
-                    @include transition(0.4s, ease-in-out);
-                    &:hover{
+                    @include transition(0.2s, ease-in-out);
+                    &:hover {
                         color: $green;
                     }
                 }

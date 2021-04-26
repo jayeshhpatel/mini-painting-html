@@ -12,7 +12,7 @@
     @include align-items(center);
     @include justify-content(center);
     cursor: pointer;
-    @include transition(0.4s, ease-in-out);
+    @include transition(0.2s, ease-in-out);
     &:hover {
         background-color: $green;
         color: $white;

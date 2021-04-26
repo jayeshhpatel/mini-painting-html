@@ -26,7 +26,7 @@
                         @include inline-flex;
                         line-height: 1;
                         text-transform: uppercase;
-                        @include transition(0.4s, ease-in-out);
+                        @include transition(0.2s, ease-in-out);
                         &:hover {
                             color: $green;
                         }
@@ -83,7 +83,7 @@
                 margin: 4px 0px;
                 cursor: pointer;
                 @include border-radius(5px);
-                @include transition(0.4s, ease-in-out);
+                @include transition(0.2s, ease-in-out);
                 background-color: $darkblack;
             }
         }
@@ -105,7 +105,7 @@
                     border: 1px solid #eeeeee;
                     margin-top: 75px;
                     &.is-visible {
-                        @include transition(0.4s, ease-in-out);
+                        @include transition(0.2s, ease-in-out);
                         @include transform(translatex(0));
                     }
                     li {
@@ -146,7 +146,7 @@
     z-index: 1;
     &.is-visible {
         @include opacity(0.4);
-        @include transition(0.4s, ease-in-out);
+        @include transition(0.2s, ease-in-out);
         visibility: visible;
     }
 }
