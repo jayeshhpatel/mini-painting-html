@@ -35,6 +35,14 @@
             ~ p {
                 margin-bottom: 0;
             }
+            a{
+                color: $darkblack;
+
+                &:hover{
+                    color: $green;
+                    border-bottom: 1px solid $green;
+                }
+            }
         }
         .add-to-watch {
             font-size: 14px;

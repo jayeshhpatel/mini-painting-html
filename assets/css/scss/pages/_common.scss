@@ -84,8 +84,12 @@ picture {
     text-align: center;
     max-width: 665px;
     margin: 0 auto 90px;
-    span {
+    a {
         border-bottom: 1px solid $green;
+        color: $darkblack;
+        &:hover{
+            color: $green;
+        }
     }
     @media (max-width: 991px) {
         margin-bottom: 30px;
@@ -460,7 +464,12 @@ section {
             margin-bottom: 30px;
             p {
                 margin: 0;
-                
+            }
+            a{
+                color: $darkblack;
+                &:hover{
+                    color: $green;
+                }
             }
         }
         .md-title {
@@ -790,11 +799,13 @@ section {
         @include flex-wrap(wrap);
         overflow: hidden;
         li {
-            @include inline-flex;
-            @include align-items(center);
-            background-color: $lightwhite;
-            @include border-radius(7px);
-            margin: 0 15px 30px;
+            .category-info{
+                @include inline-flex;
+                @include align-items(center);
+                background-color: $lightwhite;
+                @include border-radius(7px);
+                margin: 0 15px 30px;
+            }
             .category-image{
                 img{
                     min-width: 76px;
@@ -809,6 +820,7 @@ section {
                 white-space: nowrap;
                 min-width: 150px;
                 text-align: center;
+                color: $darkblack;
             }
         }
     }
@@ -819,7 +831,9 @@ section {
         padding-top: 10px;
         .category-list {
             li {
-                margin: 0 7.5px 15px;
+                .category-info{
+                 margin: 0 7.5px 15px;
+                }
             }
         }
     }
@@ -844,6 +858,7 @@ section {
         }
         .sub-title{
             margin-bottom: 10px;
+            display: block;
             span{
                 margin-right: 10px;
                 display: inline-block;
@@ -859,6 +874,17 @@ section {
             margin-bottom: 30px;
             p{
                 margin: 0;
+            }
+            a{
+                color: $darkblack;
+            }
+        }
+        .text-content{
+            a{
+                color: $darkblack;
+                &:hover{
+                    color: $green;
+                }
             }
         }
     }
