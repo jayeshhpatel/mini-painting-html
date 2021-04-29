@@ -157,6 +157,7 @@ section {
         width: 149px;
         height: 40px;
         background: url(../images/shape1.svg) left top no-repeat;
+        background-size: 100% 100%;
     }
     &:after {
         content: "";
@@ -166,6 +167,7 @@ section {
         width: 119px;
         height: 20px;
         background: url(../images/shape2.svg) left top no-repeat;
+        background-size: 100% 100%;
     }
     @media (max-width: 1440px) {
         &:before {
@@ -178,6 +180,12 @@ section {
     @media (max-width: 767px) {
         text-align: center;
         margin: 0 auto 20px;
+        &:before{
+            width: 85px;
+        }
+         &:after{
+            width: 85px;
+        }
     }
     @media (max-width: 575px) {
         text-align: center;
@@ -204,7 +212,7 @@ section {
             font-size: 20px;
             font-weight: 600;
             padding: 10px 20px;
-            box-shadow: 3px 3px 10px #e3e3e3;
+            @include box-shadow(3px 3px 10px (#e3e3e3));
             min-width: 300px;
             &::placeholder {
                 color: #9b9b9b;
@@ -249,14 +257,7 @@ section {
             max-width: 80%;
         }
     }
-    @media (max-width: 575px) {
-        .form-get-started {
-            .input-get-started {
-                height: 40px;
-                font-size: 17px;
-            }
-        }
-    }
+
     @media (max-width: 480px) {
         .form-get-started {
             display: block;
@@ -280,11 +281,13 @@ section {
                 height: 20px;
                 width: 99px;
                 top: -10px;
+                background-size: 100% 100%;
             }
             &:after {
                 background: url(../images/shape4.svg) left top no-repeat;
                 height: 40px;
                 width: 148px;
+                background-size: 100% 100%;
             }
         }
         .text-content {
@@ -301,11 +304,13 @@ section {
                 height: 20px;
                 width: 99px;
                 top: -10px;
+                background-size: 100% 100%;
             }
             &:after {
                 background: url(../images/shape1.svg) left top no-repeat;
                 height: 40px;
                 width: 148px;
+                background-size: 100% 100%;
             }
         }
     }
@@ -356,6 +361,30 @@ section {
             h3 {
                 font-size: 20px;
                 margin-bottom: 5px;
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        .right-content{
+            .image-block{
+                 &:before{
+                    width: 70px;
+                }
+                &:after{
+                    width: 85px;
+                    height: 20px;
+                }
+            }
+        }
+        .left-content{
+            .image-block{
+                 &:before{
+                    width: 70px;
+                }
+                &:after{
+                    width: 85px;
+                    height: 20px;
+                }
             }
         }
     }
@@ -597,12 +626,7 @@ section {
                 padding: 40px 0;
                 min-height: auto;
             }
-            .form-get-started {
-                .input-get-started {
-                    height: 40px;
-                    font-size: 17px;
-                }
-            }
+           
         }
     }
     @media (max-width: 480px) {
@@ -631,48 +655,6 @@ section {
                 margin-bottom: 20px;
             }
             .filter-checkbox-group {
-                .checkbox-content {
-                    @include flexbox();
-                    @include align-items(center);
-                    margin-bottom: 10px;
-                    .form-check-input:checked[type="checkbox"] {
-                        &:after {
-                            content: "";
-                            position: absolute;
-                            @include border-radius(3px);
-                            margin: 2px;
-                            left: 0;
-                            right: 0;
-                            top: 0;
-                            bottom: 0;
-                            background-color: $darkblack;
-                        }
-                    }
-                    .form-check-input {
-                        width: 18px;
-                        height: 18px;
-                        margin: 0;
-                        position: relative;
-                        @include border-radius(5px);
-                        vertical-align: top;
-                        background-color: $lightwhite;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: contain;
-                        border: 2px solid $darkblack;
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        appearance: none;
-                        -webkit-print-color-adjust: exact;
-                        color-adjust: exact;
-                    }
-                    .form-check-label {
-                        font-size: 18px;
-                        font-weight: 600;
-                        margin-left: 15px;
-                        cursor: pointer;
-                    }
-                }
                 .add-more-btn {
                     @include flexbox();
                     @include align-items(center);
@@ -713,14 +695,6 @@ section {
                     font-size: 17px;
                     margin-bottom: 15px;
                 }
-                .filter-checkbox-group {
-                    .checkbox-content {
-                        .form-check-label {
-                            font-size: 15px;
-                            margin-left: 10px;
-                        }
-                    }
-                }
             }
         }
     }
@@ -735,6 +709,54 @@ section {
                     margin-bottom: 20px;
                 }
             }
+        }
+    }
+}
+.checkbox-content {
+    @include flexbox();
+    @include align-items(center);
+    margin-bottom: 10px;
+    .form-check-input:checked[type="checkbox"] {
+        &:after {
+            content: "";
+            position: absolute;
+            @include border-radius(3px);
+            margin: 2px;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: $darkblack;
+        }
+    }
+    .form-check-input {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        position: relative;
+        @include border-radius(5px);
+        vertical-align: top;
+        background-color: $lightwhite;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        border: 2px solid $darkblack;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    .form-check-label {
+        font-size: 18px;
+        font-weight: 600;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+    @media(max-width:767px){
+        .form-check-label {
+            font-size: 15px;
+            margin-left: 10px;
         }
     }
 }
@@ -1031,5 +1053,134 @@ section {
                 }
             }
         }
+    }
+}
+.contact-section{
+    .contact-card{
+        h2{
+            margin-bottom: 50px;
+        }
+        .contact-list{
+            li{
+                font-size: 20px;
+                font-weight: 400;
+                color: $darkblack;
+                margin-bottom: 20px;
+                @include flexbox();
+                @include align-items(baseline);
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                .contact-list-img{
+                    width: 13px;
+                    margin-right: 20px;
+                }
+                a{
+                    font-size: 20px;
+                    font-weight: 400;
+                    color: $darkblack;
+                    text-decoration: underline;
+                    &:hover{
+                        color: $green;
+                    }
+                }
+            }
+        }
+    }
+    .contact-image{
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    @media(max-width:767px){
+        .contact-card{
+            margin-bottom: 30px;
+            h2{
+                margin-bottom: 20px;
+            }
+            .contact-list{
+                li{
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                    a{
+                        font-size: 16px;
+                    }
+                    .contact-list-img{
+                        margin-right: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+.contact-details-section{
+    padding-top: 95px;
+    .contact-form{
+        max-width: 805px;
+        margin: auto;
+        .form-group{
+            margin-bottom: 30px;
+        }
+        .form-control{
+            background-color: $lightwhite;
+            border: none;
+            display: block;
+            padding: 20px;
+            height: 77px;
+            @include border-radius(7px);
+            width: 100%;
+            font-size: 20px;
+            font-weight: 600;
+            color: #9B9B9B;
+            &::placeholder{
+                color: #9B9B9B;
+            }
+        }
+        textarea.form-control {
+            height: 130px;
+        }
+        .form-btns{
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(space-between);
+            .checkbox-content{
+                margin: 0;
+                .form-check-label{
+                    line-height: 1;
+                }
+            }
+            a{
+                display: inline-block;
+                color: $darkblack;
+                border-bottom: 1px solid $darkblack;
+                &:hover{
+                    border-bottom: 1px solid $green;
+                    color: $green;
+                }
+            }
+            .site-btn{
+                background-color: #FEC79A;
+                &:hover{
+                    background-color: $green;
+                }
+            }
+        }
+    }
+    @media(max-width:991px){
+        padding-top: 40px;
+        .contact-form {
+            .form-group{
+                margin-bottom: 15px;
+            }
+            .form-control{
+                height: 40px;
+                padding: 5px 15px;
+                font-size: 17px;
+            }
+        }
+    }
+    @media(max-width:767px){
+        padding-top: 10px;
     }
 }
