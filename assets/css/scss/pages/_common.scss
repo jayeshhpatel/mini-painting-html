@@ -1095,7 +1095,7 @@ section {
                     content: "";
                     position: absolute;
                     left: 0;
-                    top: 6px;
+                    top: 8px;
                     width: 15px;
                     height: 15px;
                 }
@@ -1146,6 +1146,9 @@ section {
                 li{
                     font-size: 16px;
                     margin-bottom: 15px;
+                    &:before{
+                        top: 6px;
+                    }
                     a{
                         font-size: 16px;
                     }
