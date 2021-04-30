@@ -410,6 +410,10 @@ section {
                 @include border-radius(7px);
                 width: 100%;
                 height: auto;
+                @include transition(0.2s, ease-in-out);
+                    &:hover {
+                        @include opacity(0.7);
+                    }
             }
         }
         .project-dec {
@@ -824,9 +828,16 @@ section {
             .category-info{
                 @include inline-flex;
                 @include align-items(center);
-                background-color: $lightwhite;
                 @include border-radius(7px);
+                @include transition(0.2s, ease-in-out);
+                background-color: $lightwhite;
                 margin: 0 15px 30px;
+                &:hover{
+                    background-color: $green;
+                    h3{
+                        color: $white;
+                    }
+                }
             }
             .category-image{
                 img{
@@ -843,6 +854,7 @@ section {
                 min-width: 150px;
                 text-align: center;
                 color: $darkblack;
+                @include transition(0.2s, ease-in-out);
             }
         }
     }
@@ -934,6 +946,14 @@ section {
         margin: auto;
        
         .blog-text{
+            a{
+                color: $darkblack;
+                border-bottom: 1px solid $darkblack;
+                &:hover{
+                    color: $green;
+                    border-bottom: 1px solid $green;
+                }
+            }
             h2{
                 margin: 40px 0 15px;
                 font-size: 32px;
@@ -1066,10 +1086,33 @@ section {
                 font-weight: 400;
                 color: $darkblack;
                 margin-bottom: 20px;
-                @include flexbox();
-                @include align-items(baseline);
+                position: relative;
+                padding-left: 30px;
                 &:last-child{
                     margin-bottom: 0;
+                }
+                &:before{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 6px;
+                    width: 15px;
+                    height: 15px;
+                }
+                &.pin-icon{
+                    &:before{
+                        background: url(../images/pin.png) center no-repeat;
+                    }
+                }
+                &.email-icon{
+                    &:before{
+                        background: url(../images/email.png) center no-repeat;
+                    }
+                }
+                &.phone-icon{
+                    &:before{
+                        background: url(../images/phone.png) center no-repeat;
+                    }
                 }
                 .contact-list-img{
                     width: 13px;
